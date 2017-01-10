@@ -262,7 +262,7 @@ app.config(function($routeProvider, navigationProvider){
             },
             {
                 title: 'AngularJS-Services-Intro',
-                date: toTs('10/04/2018 12:00'),
+                date: toTs('1/09/2017 8:00'),
                 controller: 'angServiceIntroController',
                 template: 'featureSetsB.html'
             },
