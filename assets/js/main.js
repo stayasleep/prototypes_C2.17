@@ -274,7 +274,7 @@ app.config(function($routeProvider, navigationProvider){
             },
             {
                 title: 'AngularJS-Directive-Creation',
-                date: toTs('10/25/2018 8:00'),
+                date: toTs('1/18/2017 8:00'),
                 controller: 'angDirectiveCreationController',
                 template: 'featureSetsB.html'
             }
