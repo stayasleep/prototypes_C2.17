@@ -96,7 +96,7 @@ app.config(function($routeProvider, navigationProvider){
             },
             {
                 title: 'JS-REGEX',
-                date: toTs('5/20/2018 8:00'),
+                date: toTs('1/24/2017 8:00'),
                 controller: 'jsRegexController',
                 template: 'featureSetsB.html'
             },
@@ -224,7 +224,7 @@ app.config(function($routeProvider, navigationProvider){
             },
             {
                 title: 'PHP-User-Auth',
-                date: toTs('5/20/2018 8:00'),
+                date: toTs('1/25/2017 8:00'),
                 controller: 'phpUserAuthController',
                 template: 'featureSetsB.html'
             },
