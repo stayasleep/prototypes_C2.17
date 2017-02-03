@@ -188,13 +188,13 @@ app.config(function($routeProvider, navigationProvider){
             },
             {
                 title: 'PHP-Directory-Operations',
-                date: toTs('5/20/2018 8:00'),
+                date: toTs('5/20/2016 8:00'),
                 controller: 'phpDirOpsController',
                 template: 'featureSetsB.html'
             },
             {
                 title: 'PHP-File-Upload',
-                date: toTs('5/20/2018 8:00'),
+                date: toTs('5/20/2016 8:00'),
                 controller: 'phpFileUploadController',
                 template: 'featureSetsB.html'
             },
@@ -206,13 +206,13 @@ app.config(function($routeProvider, navigationProvider){
             },
             {
                 title: 'PHP-Mail-Example',
-                date: toTs('5/20/2018 8:00'),
+                date: toTs('5/20/2016 8:00'),
                 controller: 'phpMailerController',
                 template: 'featureSetsB.html'
             },
             {
                 title: 'PHP-Sessions',
-                date: toTs('1/05/2017 12:00'),
+                date: toTs('1/05/2016 12:00'),
                 controller: 'phpSessionsController',
                 template: 'featureSetsB.html'
             },
@@ -230,7 +230,7 @@ app.config(function($routeProvider, navigationProvider){
             },
             {
                 title: 'PHP-RegEx',
-                date: toTs('5/20/2018 8:00'),
+                date: toTs('5/20/2016 8:00'),
                 controller: 'phpRegexController',
                 template: 'featureSetsB.html'
             }
