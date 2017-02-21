@@ -33,8 +33,27 @@
             console.log("The correct number has been guessed!");
         } else {
             console.log("Please try again");
-        };
-        switch (true){
+        }
+        switch (userInput1){
+            case gameNumber:
+                console.log("You found the correct number!");
+                break;
+            case gameNumber - 10:
+                console.log("Too low, but warm");
+                break;
+            case gameNumber + 10:
+                console.log("Too high, but warm");
+                break;
+            case gameNumber - 25:
+                console.log("Too low and cold");
+                break;
+            case gameNumber + 25:
+                console.log("Too high and cold");
+                break;
+            default:
+                console.log("You are way off!");
+        }
+        /*switch (true){
             case (userInput1 === gameNumber):
                 console.log("You found the correct number!");
                 break;
@@ -52,7 +71,7 @@
                 break;
             default:
                 console.log("You are way off!");
-        }
+        }*/
     </script>
 </head>
 <body>
