@@ -40,11 +40,68 @@
 
     <script>
         $(document).ready(function () {
-            //playground 1 code
-
+//            //playground 1 code
+            var hOne= $("<h1>",{
+                text: "I am a heading"
+            });
+            var pFirst = $("<p>",{
+                text: "This is an awesome paragraph",
+            });
+            var pSecond = $('<p>',{
+                style: "color: red",
+                text: "This has red text",
+            });
+            $("#playground1").append(hOne);          //appends parameter element to target element
+            $("#playground1").append(pFirst);
+            $("#playground1").append(pSecond);
             //playground 2 code
+            var div_awe = $("<div>",{
+                class: "awesome_class",
+                text: "Here is some awesome div text",
+            });
+            $("#playground2").append(div_awe);
+            var div_awe2 =  $("<div>",{
+                class: "awesome_class",
+                id: "my_awesome_div2",
+                text: "Here is MORE awesome div text",
+            });
+            $("#playground2").append(div_awe2);
+            var div_awe3 = $("<div>",{
+                class: "awesome_class",
+                id: "my_awesome_div3",
+                html:"Here is <strong>EVEN MORE</strong> awesome div text",
+            });
+            $("#playground2").append(div_awe3);
 
             //playground 3 code
+            var li_one = $("<li>",{
+                text:"Link 1",
+             });
+            var li_two = $("<li>",{
+                text:"Link 2",
+            });
+            var li_three = $("<li>",{
+                text: "List 3",
+            })
+            var the_ul = $("<ul>",{
+                class: "neato",
+            });
+            $(the_ul).append(li_one);  //Remember to ask how to do this by targeting the class and not the new var name
+            $(the_ul).append(li_two);  //append list variables to ul variable
+            $(the_ul).append(li_three);
+            $("#playground3").append(the_ul);  //append ul variable to the div class
+            var fig_img = $("<img>",{
+                src: "http://comerecommended.com/wp-content/uploads/2013/01/how-to-get-awesome-back.jpg",
+            });
+            var fig_cap = $("<figcaption>",{
+                html: "That's right, <span class='bold_text'>you are</span>",
+            });
+            var fig_tag = $("<figure>",{
+                class: "awesome_picture",
+            });
+            $(fig_tag).append(fig_img);
+            $(fig_tag).append(fig_cap);
+            $("#playground3").append(fig_tag);
         });
     </script>
 </head>
