@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>JS Loops</title>
+    <script>
+        var numbers = [1,2,3,4,5,6,7,8,9,10];
+        console.log(numbers);
+        for (var i=0; i<numbers.length;i++){
+            console.log(numbers[i]);
+        }
+        for (var i=1;i<=numbers.length;i++){
+            console.log(numbers[numbers.length-i]);
+        }
+        for (var i=0;i<numbers.length;i+=2){
+            console.log(numbers[i]);
+        }
+        var mixedArray = [4, 56, 11, 13, 97, 22, 7, 36, 19, 5, 8, 10];
+        for (var i=0; i<mixedArray.length;i+=2){     //does not output odd numbers exclusively
+            console.log(mixedArray[i]);
+        }
+        for (var i=0;i<mixedArray.length;i++){      //use modulo n to determine even and odd relationship
+            if (mixedArray[i]%2 !== 0){
+                console.log(mixedArray[i]);
+            }
+        }
+        var classRoom = {desk1: 'Stu', desk2: 'Peggy', desk3: 'LoneStar', desk4: 'George', desk5: 'Sheldon'};
+        var output="";
+        for (var x in classRoom){
+            output+= classRoom[x] + " is at " + x + " " ;
+        }
+        console.log(output);
+        var studentArray = [{name: "Bob", grade: 87}, {name: "Fred", grade: 82}, {name: "George", grade: 93}, {name: "Robert", grade: 85}];
+        function findStudent(fname){
+            var output = "";
+            var i = 0;
+            var found = false;
+            while (!found && i < studentArray.length) {
+                var student = studentArray[i];
+                if (student.name == fname) {
+                    output = "Found " + fname + " Grade: " + student.grade + ".";
+                    found = true;
+                }
+                i++;
+            }
+            if (!found) {
+                output = "Student " + fname + " not found.";
+            }
+            return output;
+        }
+        console.log("Test 1: ", findStudent("George"));
+        console.log("Test 2: ", findStudent("Hank"));
+        console.log("Test 3: ", findStudent("Fred"));
+    </script>
+</head>
+<body>
+
+</body>
+</html>
