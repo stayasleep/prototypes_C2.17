@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title> JS Reference Data Types</title>
+    <script>
+        //feature set 1
+        var studentNames=["Brian", "Ryan", "Kevin", "Joseph", "Andreas"];
+        console.log(studentNames[2]);
+        console.log(studentNames);
+        console.log(studentNames.length);
+        studentNames.push("kevin","jinwoo");
+        console.log(studentNames.length);
+        console.log(studentNames);
+        //feature set 2
+        var student ={};
+//        Object.defineProperties(student,{
+//            firstname: {
+//                value: "brian",
+//                writable: true
+//            },
+//            lastname: {
+//                value: "bernstein",
+//                writable: true
+//            },
+//            age: {
+//                value: 27,
+//                writable: true
+//            },
+//            school: {
+//                value:"LearningFuze",
+//                writable: true
+//            },
+//            questionList: {
+//                value: [],
+//                writable: true
+//            },
+//            hasQuestion: {
+//                value: false,
+//                writable: true
+//            }
+//        });
+        //Which way is preferable to adding to an obj?
+        student.firstname = "brian";
+        student.lastname = "bernstein";
+        student.age = 27;
+        student.school = "LearningFuze";
+        student.questionList=[];
+        student.hasQuestion=false;
+        //Add in some methods
+        student.greetings=function () {
+            return "Hello, my name is "+ student.firstname;
+        };
+        student.aboutMe= function(){
+            return "My full name is "+ student.firstname+" "+student.lastname +
+            " I am " +student.age +" years old and I am a student at " +student.school+".";
+        };
+        student.askQuestion = function(question){
+            this.questionList.push(question);
+            this.hasQuestion=true;
+            return "A question has been added to your list";
+        };
+        student.answerQuestion = function(){
+            if (this.hasQuestion){
+                this.hasQuestion=false;
+                return this.questionList[this.questionList.length-1];
+            } else {
+                return "You have no pending questions.";
+            }
+        };
+        console.log("Greetings Function: "+student.greetings());
+        console.log("About Me Function: "+student.aboutMe());
+        console.log("First Answer Question Function"+ student.answerQuestion());
+        console.log("Ask Question #1: "+student.askQuestion("Am I doing this right?"));
+        console.log("Ask Question #2: "+student.askQuestion("Help with memory cards please."));
+        console.log("Ask Question #3: "+student.askQuestion("How's the weather today?"));
+        console.log("Second Answer Question: "+student.answerQuestion());
+        console.log("Here is my student object "+ student);
+        console.log("Here is my student object ", student);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
