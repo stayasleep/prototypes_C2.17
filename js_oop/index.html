@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS OOP</title>
+    <script>
+        function coin_stack(initial_coins){
+            this.value=initial_coins;
+            this.add_coins = function(added_coins){
+                this.value = this.value+added_coins;
+            };
+            this.remove_coins = function(removed_coins){
+                var coins_removed;
+                if (this.value >= removed_coins){
+                    this.value=this.value - removed_coins;
+                    coins_removed = removed_coins;
+                    return coins_removed;
+                } else {
+                    coins_removed=this.value;
+                    this.value = 0;
+                    return coins_removed;
+                }
+            }
+        }
+        var my_coin_stack = new coin_stack(50);
+        my_coin_stack.add_coins(15);
+        console.log("1- my_coin_stack has " +my_coin_stack.value+ " coins");
+        my_coin_stack.remove_coins(37);
+        console.log("2- my_coin_stack has " +my_coin_stack.value+ " coins");
+        my_coin_stack.remove_coins(55);
+        console.log("3-my_coin_stack contains "+ my_coin_stack.value + " coins");
+        //Feature Set 3
+        coin_stack.prototype.transfer_coins =function(from_coins,amt_coins){
+            var trans_amt= from_coins.remove_coins(amt_coins);
+            this.add_coins(trans_amt);
+            return trans_amt;
+        };
+        var erics_coins = new coin_stack(50);
+        var dans_coins = new coin_stack(50);
+        console.log(erics_coins.value +" coins for eric");
+        console.log(dans_coins.value +" coins for dan");
+        erics_coins.transfer_coins(dans_coins, 30);
+        console.log("eric has "+erics_coins.value + " coins");
+        console.log("dan has " +dans_coins.value+ " coins");
+        dans_coins.transfer_coins(erics_coins, 120);
+        console.log("dan has " + dans_coins.value+ " coins");
+        console.log("erik has "+ erics_coins.value+ " coins");
+    </script>
+</head>
+<body>
+<h1>Javascript OOp</h1>
+</body>
+</html>
