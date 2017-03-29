@@ -4,9 +4,54 @@
     <meta charset="UTF-8">
     <title>Angular Controllers</title>
     <!-- Add the AngularJS CDN below -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
 
 </head>
-<body>
+<body ng-app="veryCoolApp">
+    <div ng-controller="formController as fc">
+        First Name:<input type='text' ng-model="fc.form.fName"><br>
+        <br>
+        Last Name:<input type="text" ng-model="fc.form.lName"><br>
+        <br>
+        Email:<input type='text' ng-model="fc.form.email"><br>
+        <br>
+        <textarea rows ='4' cols="'60" ng-model="fc.form.comments" ng-disabled="fc.blockOut()"></textarea><br>
+        <button type="button" ng-click="fc.addFormObj()">Add</button>
+        <table>
+            <tbody>
+                <tr>
+                    <th>Full Name</th>
+                    <th>Email</th>
+                    <th>Comments</th>
+                </tr>
+                <tr ng-repeat="things in fc.formArray">
+                    <td>{{things.fName+" "+things.lName}}</td>
+                    <td>{{things.email}}</td>
+                    <td>{{things.comments}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>{{'Characters Left: ' + fc.charAvailable()}}</p>
+    </div>
+    <script>
+        var app = angular.module('veryCoolApp',[]);
+        app.controller('formController',function(){
+            this.form={comments:""};
+            this.formArray=[];
+            this.addFormObj = function() {
+                this.formArray.push(this.form);
+                this.form = {comments:""};
+            }
+            this.maxLen = 50;
+            this.charAvailable=function(){
+                return this.maxLen - this.form.comments.length;
+            }
+            this.blockOut = function(){
+                return this.charAvailable() <= 0 ? true: false;
+            }
 
+        });
+
+    </script>
 </body>
 </html>
