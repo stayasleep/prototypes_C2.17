@@ -12,7 +12,7 @@ $variable1 = 'hello';
 
 //EXERCISE 3
 
-$numbers = [3, 5, 16, 3, 4, 18];
+    $numbers = [3, 5, 16, 3, 4, 18];
 $result = $numbers[0];
 
 for($i = 1; $i < count( $numbers); $i++)
