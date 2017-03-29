@@ -4,9 +4,16 @@
     <meta charset="UTF-8">
     <title>Angular DOM and Events</title>
     <!-- Add Angular CDN below -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
 
 </head>
-<body>
-
+<body ng-app>
+    <div ng-init="myMusic = true; counter=0">
+        <span ng-show="myMusic">Disabled</span>
+        <span ng-hide="myMusic">Enabled</span>
+        <button type="button" ng-click="counter=counter+1" ng-disabled ="myMusic">Play</button>
+        <input type="checkbox" ng-model="myMusic">
+        <p>{{'Times Played: '+ counter}}</p>
+    </div>
 </body>
 </html>
