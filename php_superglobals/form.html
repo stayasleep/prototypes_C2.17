@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>php super globals</title>
+</head>
+<body>
+<form action="index.php" method="get">
+    <input type="text" name="name" id="my_name">
+    <select name="gender">
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+    </select>
+    <input placeholder="favorite fruit" name="fav_fruit[]">
+    <input placeholder="favorite fruit" name="fav_fruit[]">
+    <input placeholder="favorite fruit" name="fav_fruit[]">
+    <button type="submit">Submit</button>
+    <!--in POST the url has no key/values, array looks harder to read...in GET the url has all the key/value pairs and is easy to read -->
+    <!--if i used post then the print_r GET array became Array() and if i did method get then the vardump would show up still as array(0)-->
+</form>
+</body>
+</html>
