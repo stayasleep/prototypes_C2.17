@@ -6,15 +6,15 @@
     <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
 </head>
 <body>
-<form>
+<form name="myForm">
     <input type="checkbox" value="howdy"><br>
-    <!--<textarea></textarea><br>-->
+    <textarea></textarea><br>
     <button type="button" onclick="makeTheCall()">Trigger Ajax Call</button>
 </form>
 <script>
     function makeTheCall(){
         $.ajax({
-            data: {value: "howdy"},
+            data: {myForm:$('textarea').val() ,value: "howdy"},
             dataType:'text',
             url:"http://localhost:8080/prototypes_C2.17/php_superglobals/index.php?_ijt=86k4qs688k4pqmsnlbtljr1497",
             method: "get",
