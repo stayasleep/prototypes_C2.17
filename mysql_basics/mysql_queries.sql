@@ -22,7 +22,7 @@ ALTER TABLE `todo_items` ADD `useless` INT(11) NOT NULL AFTER `user_id`;
 UPDATE `todo_items` SET `useless`='2' WHERE `user_id`='mov1';
 
 -- delete a todo_item by that user
-UPDATE `todo_items` SET `title`='' WHERE `user_id`='mov1'
+DELETE FROM `todo_items` WHERE `user_id`='mov1'
 
 
 -- perform a select to get all info by a user's id
